@@ -1,0 +1,23 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<canvas id="test" width="1000" height="600"></canvas>
+<script type="text/javascript" src="easing.js"></script>
+<script type="text/javascript">
+	var cvs=document.getElementById('test'),
+		ctx=cvs.getContext('2d');
+	ctx.strokeStyle="#000000";
+
+	ctx.beginPath();
+	ctx.moveTo(100,50);
+	for(x=100;x<900;x++){
+		var t=(x-100)/800;
+		ctx.lineTo(x,Easing.easeInOutBack(t)*400+50);
+	}
+	ctx.closePath();
+	ctx.stroke();
+</script>
+</body>
+</html>
