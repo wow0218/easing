@@ -73,21 +73,21 @@
 			return 0.5 * (Math.sqrt(1 - (t-=2)*t) + 1);
 		},
 		easeInBack: function (t) {
-			if (s == undefined) s = 1.70158;
+			var s = 1.70158;
 			return t*t*((s+1)*t - s);
 		},
 		easeOutBack: function (t) {
-			if (s == undefined) s = 1.70158;
+			var s = 1.70158;
 			var a=(t-=1)*t*((s+1)*t + s) + 1;
 			return a;
 		},
 		easeInOutBack: function (t) {
-			if (s == undefined) s = 1.70158; 
+			var s = 1.70158; 
 			if ((t*=2) < 1) return 0.5*(t*t*(((s*=(1.525))+1)*t - s));
 			return 0.5*((t-=2)*t*(((s*=(1.525))+1)*t + s) + 2);
 		},
 		easeInBounce: function (t) {
-			return -1*this.easeOutBounce(1-t);
+			return 1-this.easeOutBounce(1-t);
 		},
 		easeOutBounce: function (t) {
 			var a;

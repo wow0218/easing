@@ -12,9 +12,12 @@
 
 	ctx.beginPath();
 	ctx.moveTo(100,50);
+	function draw(x,y){
+		ctx.lineTo(x,Easing.easeInOutBack(t)*400+50);
+	}
 	for(x=100;x<900;x++){
 		var t=(x-100)/800;
-		ctx.lineTo(x,Easing.easeInOutBack(t)*400+50);
+		
 	}
 	ctx.closePath();
 	ctx.stroke();
